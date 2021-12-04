@@ -16,27 +16,27 @@ class _HeaderState extends State<Header> {
     return SliverList(
       delegate: SliverChildListDelegate(
         [
-          Column(
+          Stack(
             children: [
-              Container(
-                padding: const EdgeInsets.symmetric(horizontal: 15),
-                height: size.height / 5,
-                width: size.width,
-                decoration: BoxDecoration(
-                  color: Colors.teal[300],
-                  borderRadius: const BorderRadius.vertical(
-                    bottom: Radius.circular(45),
-                  ),
-                  boxShadow: const [
-                    BoxShadow(
-                      // offset: Offset(0, 2),
-                      blurRadius: 4,
+              Column(
+                children: [
+                  Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 15),
+                    height: size.height / 5,
+                    width: size.width,
+                    decoration: BoxDecoration(
+                      color: Colors.teal[300],
+                      borderRadius: const BorderRadius.vertical(
+                        bottom: Radius.circular(45),
+                      ),
+                      boxShadow: const [
+                        BoxShadow(
+                          // offset: Offset(0, 2),
+                          blurRadius: 4,
+                        ),
+                      ],
                     ),
-                  ],
-                ),
-                child: Stack(
-                  children: [
-                    Column(
+                    child: Column(
                       children: [
                         const SizedBox(
                           height: 20,
@@ -90,7 +90,32 @@ class _HeaderState extends State<Header> {
                         ),
                       ],
                     ),
-                  ],
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                ],
+              ),
+              Positioned(
+                bottom: 0,
+                child: SizedBox(
+                  width: size.width,
+                  height: 50,
+                  child: Card(
+                    elevation: 3,
+                    margin: const EdgeInsets.symmetric(horizontal: 50),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    child: TextFormField(
+                      decoration: const InputDecoration(
+                        border: InputBorder.none,
+                        labelText: "Search",
+                        suffixIcon: Icon(Icons.search),
+                        contentPadding: EdgeInsets.only(left: 15),
+                      ),
+                    ),
+                  ),
                 ),
               ),
             ],
