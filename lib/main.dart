@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'header.dart';
+import 'categories.dart';
 
 void main() {
   runApp(const MyApp());
@@ -56,6 +57,7 @@ class _HamburgerState extends State<Hamburger> {
             ],
           ),
           const Header(),
+          const Categories(),
         ],
       ),
       // Next line make visible all items that goes behind between the floating
