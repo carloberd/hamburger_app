@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 import 'header.dart';
 import 'categories.dart';
 import 'hamburger_list.dart';
+import 'burger_page.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  static const tag = 'main';
   const MyApp({Key? key}) : super(key: key);
 
   @override
@@ -27,6 +29,10 @@ class MyApp extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
       home: const Hamburger(),
+      routes: {
+        MyApp.tag: (_) => const Hamburger(),
+        BurgerPage.tag: (_) => const BurgerPage()
+      },
     );
   }
 }
@@ -68,7 +74,9 @@ class _HamburgerState extends State<Hamburger> {
       extendBody: true,
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.of(context).pushNamed(MyApp.tag);
+        },
         child: const Icon(Icons.home),
       ),
       bottomNavigationBar: ClipRRect(

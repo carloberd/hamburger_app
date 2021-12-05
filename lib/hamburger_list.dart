@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'burger_page.dart';
 
 class HamburgerList extends StatefulWidget {
   const HamburgerList({Key? key}) : super(key: key);
@@ -78,7 +79,7 @@ class _HamburgerListState extends State<HamburgerList> {
                 ),
                 child: GestureDetector(
                   onTap: () {
-                    // TODO Navigator
+                    Navigator.of(context).pushNamed(BurgerPage.tag);
                   },
                   child: Card(
                     child: Padding(
@@ -140,7 +141,7 @@ class _HamburgerListState extends State<HamburgerList> {
               Positioned(
                 child: GestureDetector(
                   onTap: () {
-                    //TODO Navigator
+                    Navigator.of(context).pushNamed(BurgerPage.tag);
                   },
                   child: index == 0
                       ? firstImage
