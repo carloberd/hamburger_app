@@ -102,6 +102,7 @@ class _HeaderState extends State<Header> {
                   width: size.width,
                   height: 50,
                   child: Card(
+                    color: Colors.white,
                     elevation: 3,
                     margin: const EdgeInsets.symmetric(horizontal: 50),
                     shape: RoundedRectangleBorder(

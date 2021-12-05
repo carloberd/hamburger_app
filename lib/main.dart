@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'header.dart';
 import 'categories.dart';
+import 'hamburger_list.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
         floatingActionButtonTheme: FloatingActionButtonThemeData(
           backgroundColor: Colors.lime[600],
         ),
+        cardColor: Colors.teal[300],
       ),
       debugShowCheckedModeBanner: false,
       home: const Hamburger(),
@@ -58,6 +60,7 @@ class _HamburgerState extends State<Hamburger> {
           ),
           const Header(),
           const Categories(),
+          const HamburgerList(),
         ],
       ),
       // Next line make visible all items that goes behind between the floating
